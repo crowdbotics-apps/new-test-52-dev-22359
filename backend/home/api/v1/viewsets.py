@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from home.models import APP1
-from .serializers import APP1Serializer
+from home.models import APP1, X1, X2
+from .serializers import APP1Serializer, X1Serializer, X2Serializer
 from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.viewsets import ModelViewSet, ViewSet
@@ -41,3 +41,21 @@ class APP1ViewSet(viewsets.ModelViewSet):
         authentication.TokenAuthentication,
     )
     queryset = APP1.objects.all()
+
+
+class X1ViewSet(viewsets.ModelViewSet):
+    serializer_class = X1Serializer
+    authentication_classes = (
+        authentication.SessionAuthentication,
+        authentication.TokenAuthentication,
+    )
+    queryset = X1.objects.all()
+
+
+class X2ViewSet(viewsets.ModelViewSet):
+    serializer_class = X2Serializer
+    authentication_classes = (
+        authentication.SessionAuthentication,
+        authentication.TokenAuthentication,
+    )
+    queryset = X2.objects.all()
