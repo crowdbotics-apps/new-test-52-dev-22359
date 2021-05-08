@@ -1,4 +1,4 @@
-from .models import APP1
+from .models import APP1, X1, X2
 from django.views.generic import CreateView, UpdateView, DetailView, ListView
 from django.shortcuts import render
 
